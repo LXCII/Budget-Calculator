@@ -18,6 +18,11 @@ namespace Budget_Calculator
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Prompts the user to upload a .csv file and reads 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonUpload_Click(object sender, EventArgs e)
         {
             //Declare variables

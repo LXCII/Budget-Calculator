@@ -52,10 +52,19 @@
     <Compile Include="Budget Calculator.Designer.cs">
       <DependentUpon>Budget Calculator.cs</DependentUpon>
     </Compile>
+    <Compile Include="Categorise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categorise.Designer.cs">
+      <DependentUpon>Categorise.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Budget Calculator.resx">
       <DependentUpon>Budget Calculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categorise.resx">
+      <DependentUpon>Categorise.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

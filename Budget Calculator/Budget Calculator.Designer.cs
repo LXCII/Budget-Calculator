@@ -41,7 +41,7 @@
             // 
             // buttonUpload
             // 
-            this.buttonUpload.Location = new System.Drawing.Point(38, 55);
+            this.buttonUpload.Location = new System.Drawing.Point(37, 118);
             this.buttonUpload.Name = "buttonUpload";
             this.buttonUpload.Size = new System.Drawing.Size(114, 27);
             this.buttonUpload.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             // textBoxBalance
             // 
-            this.textBoxBalance.Location = new System.Drawing.Point(122, 193);
+            this.textBoxBalance.Location = new System.Drawing.Point(111, 275);
             this.textBoxBalance.Name = "textBoxBalance";
             this.textBoxBalance.ReadOnly = true;
             this.textBoxBalance.Size = new System.Drawing.Size(84, 20);
@@ -76,7 +76,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(58, 197);
+            this.label1.Location = new System.Drawing.Point(47, 279);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 4;
@@ -84,7 +84,7 @@
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(172, 55);
+            this.buttonExit.Location = new System.Drawing.Point(157, 118);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(70, 27);
             this.buttonExit.TabIndex = 5;
@@ -95,7 +95,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(121, 115);
+            this.comboBox1.Location = new System.Drawing.Point(110, 197);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 6;
@@ -104,7 +104,7 @@
             // 
             this.labelGroupBy.AutoSize = true;
             this.labelGroupBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGroupBy.Location = new System.Drawing.Point(35, 120);
+            this.labelGroupBy.Location = new System.Drawing.Point(24, 202);
             this.labelGroupBy.Name = "labelGroupBy";
             this.labelGroupBy.Size = new System.Drawing.Size(63, 16);
             this.labelGroupBy.TabIndex = 7;
