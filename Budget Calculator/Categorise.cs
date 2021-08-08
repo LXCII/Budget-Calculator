@@ -63,11 +63,19 @@ namespace Budget_Calculator
                     {
                         //Set category to transaction
                         t.Category = comboBoxCategories.SelectedItem.ToString();
+                        //Update listview to display category
+                        item.SubItems.Add(t.Category);
+                        item.SubItems[7].Text = t.Category;
                     }
                 }
             }
         }
 
+        /// <summary>
+        /// Returns to homepage.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void labelReturn_Click(object sender, EventArgs e)
         {
             Hide();
