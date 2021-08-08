@@ -27,11 +27,13 @@ namespace Budget_Calculator
         {
             //Declare variables
             StreamReader reader;
+            List<string> dates = new List<string>(); List<string> payees = new List<string>();
+            List<string> descriptions = new List<string>(); List<string> references = new List<string>();
+            List<string> particulars = new List<string>(); List<decimal> amountVals = new List<decimal>();
             string[] transactions;
             const string FILTER = "CSV Files|*.csv|All Files|*.*";
-            string line = "", date = "", payee = "", description = "", 
-                reference = "", particulars = "";
-            decimal amount = 0, balance = 0;
+            string line = "";
+            decimal balance = 0;
 
             //Set filter for dialog control
             openFileDialog1.Filter = FILTER;
@@ -50,22 +52,25 @@ namespace Budget_Calculator
                         line = reader.ReadLine();
                         //Split values from the line
                         transactions = line.Split(',');
+
                         if (transactions[0] != "Date")
                         {
-                            //Extract values into separate variables
-                            date = transactions[0];
-                            amount = decimal.Parse(transactions[1]);
-                            payee = transactions[2];
-                            description = transactions[3];
-                            reference = transactions[4];
-                            particulars = transactions[5]; //Only gets first line of particulars
+                            //Extract values into separate arrays
+                            dates.Add(transactions[0]);
+                            amountVals.Add(decimal.Parse(transactions[1]));
+                            payees.Add(transactions[2].Substring(1, transactions[2].Length - 2));
+                            descriptions.Add(transactions[3].Substring(1, transactions[3].Length - 2));
+                            if (transactions[4] != "") { references.Add(transactions[4].Substring(1, transactions[4].Length - 2)); }
+                            else { references.Add(transactions[4]); }
+                            if (transactions[5] != "") { particulars.Add(transactions[5].Substring(1, transactions[5].Length - 2)); }
+                            else { particulars.Add(transactions[5]); }
 
                             //Calculate balance
-                            balance += amount;
+                            //balance += amount;
                             //Display balance
-                            textBoxBalance.Text = balance.ToString("c");
+                            //textBoxBalance.Text = balance.ToString("c");
                             //Change colour of textbox according to balance
-                            if (balance < 0) { textBoxBalance.BackColor = Color.Red; } else { textBoxBalance.BackColor = Color.Green;  }
+                            //if (balance < 0) { textBoxBalance.BackColor = Color.Red; } else { textBoxBalance.BackColor = Color.Green;  }
                         }
                     }
                     catch
@@ -73,6 +78,11 @@ namespace Budget_Calculator
                         Console.WriteLine("Error: " + line); //Display error message
                     }
                 }
+
+                //Open Categorise window
+                Hide();
+                Categorise c = new Categorise(dates, payees, descriptions, references, particulars, amountVals);
+                c.ShowDialog(); this.Close();
             }
             
         }

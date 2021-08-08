@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewTransactions = new System.Windows.Forms.ListView();
             this.columnDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnPayee = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnReference = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnParticulars = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.labelHeading = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelReturn = new System.Windows.Forms.Label();
@@ -47,33 +48,35 @@
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // listView1
+            // listViewTransactions
             // 
-            this.listView1.CheckBoxes = true;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewTransactions.CheckBoxes = true;
+            this.listViewTransactions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnDate,
             this.columnPayee,
             this.columnDescription,
             this.columnReference,
-            this.columnParticulars});
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(25, 23);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(392, 337);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.columnParticulars,
+            this.columnAmount});
+            this.listViewTransactions.FullRowSelect = true;
+            this.listViewTransactions.GridLines = true;
+            this.listViewTransactions.HideSelection = false;
+            this.listViewTransactions.Location = new System.Drawing.Point(25, 23);
+            this.listViewTransactions.Name = "listViewTransactions";
+            this.listViewTransactions.Size = new System.Drawing.Size(438, 337);
+            this.listViewTransactions.TabIndex = 0;
+            this.listViewTransactions.UseCompatibleStateImageBehavior = false;
+            this.listViewTransactions.View = System.Windows.Forms.View.Details;
             // 
             // columnDate
             // 
             this.columnDate.Text = "Date";
+            this.columnDate.Width = 50;
             // 
             // columnPayee
             // 
             this.columnPayee.Text = "Payee";
-            this.columnPayee.Width = 89;
+            this.columnPayee.Width = 70;
             // 
             // columnDescription
             // 
@@ -90,11 +93,15 @@
             this.columnParticulars.Text = "Particulars";
             this.columnParticulars.Width = 71;
             // 
+            // columnAmount
+            // 
+            this.columnAmount.Text = "Amount";
+            // 
             // labelHeading
             // 
             this.labelHeading.AutoSize = true;
             this.labelHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeading.Location = new System.Drawing.Point(443, 23);
+            this.labelHeading.Location = new System.Drawing.Point(487, 35);
             this.labelHeading.Name = "labelHeading";
             this.labelHeading.Size = new System.Drawing.Size(235, 24);
             this.labelHeading.TabIndex = 1;
@@ -103,7 +110,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(495, 133);
+            this.label1.Location = new System.Drawing.Point(539, 145);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 13);
             this.label1.TabIndex = 2;
@@ -113,7 +120,7 @@
             // 
             this.labelReturn.AutoSize = true;
             this.labelReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReturn.Location = new System.Drawing.Point(531, 52);
+            this.labelReturn.Location = new System.Drawing.Point(575, 64);
             this.labelReturn.Name = "labelReturn";
             this.labelReturn.Size = new System.Drawing.Size(48, 13);
             this.labelReturn.TabIndex = 3;
@@ -121,6 +128,7 @@
             // 
             // comboBoxCategories
             // 
+            this.comboBoxCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategories.FormattingEnabled = true;
             this.comboBoxCategories.Items.AddRange(new object[] {
             "Entertainment",
@@ -130,7 +138,7 @@
             "Shopping",
             "Transport",
             "Utilities"});
-            this.comboBoxCategories.Location = new System.Drawing.Point(501, 152);
+            this.comboBoxCategories.Location = new System.Drawing.Point(545, 164);
             this.comboBoxCategories.Name = "comboBoxCategories";
             this.comboBoxCategories.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCategories.TabIndex = 4;
@@ -139,7 +147,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(496, 181);
+            this.label2.Location = new System.Drawing.Point(540, 193);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 13);
             this.label2.TabIndex = 5;
@@ -147,14 +155,14 @@
             // 
             // textBoxCategory
             // 
-            this.textBoxCategory.Location = new System.Drawing.Point(484, 203);
+            this.textBoxCategory.Location = new System.Drawing.Point(528, 215);
             this.textBoxCategory.Name = "textBoxCategory";
             this.textBoxCategory.Size = new System.Drawing.Size(100, 20);
             this.textBoxCategory.TabIndex = 6;
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(590, 201);
+            this.buttonAdd.Location = new System.Drawing.Point(634, 213);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(48, 23);
             this.buttonAdd.TabIndex = 7;
@@ -164,7 +172,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(474, 97);
+            this.label3.Location = new System.Drawing.Point(518, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(174, 13);
             this.label3.TabIndex = 8;
@@ -173,7 +181,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(447, 244);
+            this.label4.Location = new System.Drawing.Point(491, 256);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(221, 13);
             this.label4.TabIndex = 9;
@@ -181,7 +189,7 @@
             // 
             // buttonAllocate
             // 
-            this.buttonAllocate.Location = new System.Drawing.Point(523, 264);
+            this.buttonAllocate.Location = new System.Drawing.Point(567, 276);
             this.buttonAllocate.Name = "buttonAllocate";
             this.buttonAllocate.Size = new System.Drawing.Size(75, 23);
             this.buttonAllocate.TabIndex = 10;
@@ -191,10 +199,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(520, 317);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(555, 324);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 13);
+            this.label5.Size = new System.Drawing.Size(104, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "Finish allocation";
             // 
@@ -202,7 +210,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 376);
+            this.ClientSize = new System.Drawing.Size(752, 376);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonAllocate);
             this.Controls.Add(this.label4);
@@ -214,7 +222,7 @@
             this.Controls.Add(this.labelReturn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelHeading);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listViewTransactions);
             this.Name = "Categorise";
             this.Text = "Categorise";
             this.ResumeLayout(false);
@@ -224,7 +232,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewTransactions;
         private System.Windows.Forms.ColumnHeader columnDate;
         private System.Windows.Forms.ColumnHeader columnPayee;
         private System.Windows.Forms.ColumnHeader columnDescription;
@@ -241,5 +249,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonAllocate;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ColumnHeader columnAmount;
     }
 }
