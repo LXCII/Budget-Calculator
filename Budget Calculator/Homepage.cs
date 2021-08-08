@@ -30,10 +30,11 @@ namespace Budget_Calculator
             List<string> dates = new List<string>(); List<string> payees = new List<string>();
             List<string> descriptions = new List<string>(); List<string> references = new List<string>();
             List<string> particulars = new List<string>(); List<decimal> amountVals = new List<decimal>();
+            List<Transaction> ts = new List<Transaction>();
             string[] transactions;
             const string FILTER = "CSV Files|*.csv|All Files|*.*";
-            string line = "";
-            decimal balance = 0;
+            string date, payee, desc, refr, parts, line = "";
+            decimal balance, amount = 0;
 
             //Set filter for dialog control
             openFileDialog1.Filter = FILTER;
@@ -55,15 +56,19 @@ namespace Budget_Calculator
 
                         if (transactions[0] != "Date")
                         {
-                            //Extract values into separate arrays
-                            dates.Add(transactions[0]);
-                            amountVals.Add(decimal.Parse(transactions[1]));
-                            payees.Add(transactions[2].Substring(1, transactions[2].Length - 2));
-                            descriptions.Add(transactions[3].Substring(1, transactions[3].Length - 2));
-                            if (transactions[4] != "") { references.Add(transactions[4].Substring(1, transactions[4].Length - 2)); }
-                            else { references.Add(transactions[4]); }
-                            if (transactions[5] != "") { particulars.Add(transactions[5].Substring(1, transactions[5].Length - 2)); }
-                            else { particulars.Add(transactions[5]); }
+                            //Extract values into separate variables
+                            date = transactions[0];
+                            amount = decimal.Parse(transactions[1]);
+                            payee = transactions[2].Substring(1, transactions[2].Length - 2);
+                            desc = transactions[3].Substring(1, transactions[3].Length - 2);
+                            if (transactions[4] != "") { refr = transactions[4].Substring(1, transactions[4].Length - 2); }
+                            else { refr = transactions[4]; }
+                            if (transactions[5] != "") { parts = transactions[5].Substring(1, transactions[5].Length - 2); }
+                            else { parts = transactions[5]; }
+
+                            //Create transaction and add to list
+                            Transaction t = new Transaction(date, payee, desc, refr, parts, amount);
+                            ts.Add(t);
 
                             //Calculate balance
                             //balance += amount;
@@ -81,7 +86,7 @@ namespace Budget_Calculator
 
                 //Open Categorise window
                 Hide();
-                Categorise c = new Categorise(dates, payees, descriptions, references, particulars, amountVals);
+                Categorise c = new Categorise(ts);
                 c.ShowDialog(); this.Close();
             }
             

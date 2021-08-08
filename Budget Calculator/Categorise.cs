@@ -12,17 +12,17 @@ namespace Budget_Calculator
 {
     public partial class Categorise : Form
     {
-        public Categorise(List<string> dt, List<string> py, List<string> dc, List<string> r, List<string> pr, List<decimal> a)
+        public Categorise(List<Transaction> ts)
         {
             InitializeComponent();
 
             //Display transaction items into listview
-            for (int i = 0; i < dt.Count; i++)
+            for (int i = 0; i < ts.Count; i++)
             {
-                ListViewItem item = new ListViewItem(dt[i].ToString());
-                item.SubItems.Add(py[i]); item.SubItems.Add(dc[i]);
-                item.SubItems.Add(r[i]); item.SubItems.Add(pr[i]);
-                item.SubItems.Add(a[i].ToString("c"));
+                ListViewItem item = new ListViewItem(ts[i].Date);
+                item.SubItems.Add(ts[i].Payee); item.SubItems.Add(ts[i].Description);
+                item.SubItems.Add(ts[i].Reference); item.SubItems.Add(ts[i].Particulars);
+                item.SubItems.Add(ts[i].Amount.ToString("c"));
                 listViewTransactions.Items.Add(item);
             }
         }

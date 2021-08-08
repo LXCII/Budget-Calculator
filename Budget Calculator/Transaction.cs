@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Budget_Calculator
 {
-    class Transaction
+    public class Transaction
     {
         //Variables of a transaction
         private string date, payee, description, reference, particulars, category;
