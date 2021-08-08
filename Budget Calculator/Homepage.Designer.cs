@@ -72,7 +72,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(288, 199);
+            this.ClientSize = new System.Drawing.Size(279, 199);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonUpload);

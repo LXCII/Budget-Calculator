@@ -11,6 +11,7 @@ namespace Budget_Calculator
         //Variables of a transaction
         private string date, payee, description, reference, particulars, category;
         private decimal amount;
+        private int number;
 
         /// <summary>
         /// Initialises a transaction to the variables passed in.
@@ -62,6 +63,12 @@ namespace Budget_Calculator
         {
             get { return category; }
             set { category = value; }
+        }
+
+        public int Number
+        {
+            get { return number; }
+            set { number = value; }
         }
         #endregion
     }
