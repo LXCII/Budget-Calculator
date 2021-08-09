@@ -13,6 +13,7 @@ namespace Budget_Calculator
     public partial class Calculator : Form
     {
         private List<Transaction> transactions;
+        private decimal balance = 0;
 
         public Calculator(List<Transaction> ts)
         {
@@ -25,7 +26,7 @@ namespace Budget_Calculator
 
         private void processOverview()
         {
-            decimal income = 0, expenses = 0, balance = 0;
+            decimal income = 0, expenses = 0;
 
             //Calculate total income and expenses
             foreach (Transaction t in transactions)
@@ -78,6 +79,15 @@ namespace Budget_Calculator
         private void labelExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void buttonCalculate_Click(object sender, EventArgs e)
+        {
+            //Calculate estimated balance
+            decimal estimated = balance + decimal.Parse(textBoxIncome.Text) - decimal.Parse(textBoxExpenses.Text);
+            labelEstimated.Text = estimated.ToString("c");
+            if (estimated > 0) { labelEstimated.BackColor = Color.Green; }
+            else { labelEstimated.BackColor = Color.Red; }
         }
     }
 }

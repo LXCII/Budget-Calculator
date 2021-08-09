@@ -55,7 +55,7 @@
             this.textBoxExpenses = new System.Windows.Forms.TextBox();
             this.buttonCalculate = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.labelEstimated = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -235,7 +235,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.labelEstimated);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.buttonCalculate);
             this.panel3.Controls.Add(this.textBoxExpenses);
@@ -310,6 +310,7 @@
             this.buttonCalculate.TabIndex = 6;
             this.buttonCalculate.Text = "Calculate";
             this.buttonCalculate.UseVisualStyleBackColor = true;
+            this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
             // 
             // label11
             // 
@@ -321,14 +322,14 @@
             this.label11.Text = "Estimated Balance:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label14
+            // labelEstimated
             // 
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(71, 253);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(134, 23);
-            this.label14.TabIndex = 8;
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelEstimated.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEstimated.Location = new System.Drawing.Point(71, 253);
+            this.labelEstimated.Name = "labelEstimated";
+            this.labelEstimated.Size = new System.Drawing.Size(134, 23);
+            this.labelEstimated.TabIndex = 8;
+            this.labelEstimated.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Calculator
             // 
@@ -379,6 +380,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button buttonCalculate;
         private System.Windows.Forms.TextBox textBoxExpenses;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label labelEstimated;
     }
 }
