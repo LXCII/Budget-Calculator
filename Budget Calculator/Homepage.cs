@@ -34,7 +34,7 @@ namespace Budget_Calculator
             string[] transactions;
             const string FILTER = "CSV Files|*.csv|All Files|*.*";
             string date, payee, desc, refr, parts, line = "";
-            decimal balance, amount = 0;
+            decimal amount = 0;
 
             //Set filter for dialog control
             openFileDialog1.Filter = FILTER;
