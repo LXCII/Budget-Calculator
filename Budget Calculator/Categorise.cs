@@ -82,5 +82,17 @@ namespace Budget_Calculator
             Form1 homepage = new Form1();
             homepage.ShowDialog(); this.Close();
         }
+
+        /// <summary>
+        /// Opens calculator.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Calculator calculator = new Calculator(transactions);
+            calculator.ShowDialog(); this.Close();
+        }
     }
 }

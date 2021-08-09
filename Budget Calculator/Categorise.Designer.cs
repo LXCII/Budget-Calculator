@@ -212,6 +212,7 @@
             this.label5.Size = new System.Drawing.Size(104, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "Finish allocation";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // columnNum
             // 

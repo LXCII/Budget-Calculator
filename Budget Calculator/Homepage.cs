@@ -69,13 +69,6 @@ namespace Budget_Calculator
                             //Create transaction and add to list
                             Transaction t = new Transaction(date, payee, desc, refr, parts, amount);
                             ts.Add(t);
-
-                            //Calculate balance
-                            //balance += amount;
-                            //Display balance
-                            //textBoxBalance.Text = balance.ToString("c");
-                            //Change colour of textbox according to balance
-                            //if (balance < 0) { textBoxBalance.BackColor = Color.Red; } else { textBoxBalance.BackColor = Color.Green;  }
                         }
                     }
                     catch

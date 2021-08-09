@@ -268,6 +268,7 @@
             this.labelExit.Size = new System.Drawing.Size(24, 13);
             this.labelExit.TabIndex = 1;
             this.labelExit.Text = "Exit";
+            this.labelExit.Click += new System.EventHandler(this.labelExit_Click);
             // 
             // label12
             // 
